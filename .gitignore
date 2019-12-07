@@ -1,0 +1,31 @@
+# Modules
+node_modules/
+npm-debug*
+yarn-debug*
+yarn-error*
+.yarn-integrity
+.pnp/
+.pnp.js
+.npm
+.node_repl_history
+
+# Gatsby
+.cache/
+public
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Misc
+coverage/
+lib-cov/
+private/
+.DS_Store
+.env*
