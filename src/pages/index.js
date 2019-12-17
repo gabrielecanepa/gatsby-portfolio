@@ -1,6 +1,6 @@
 import Layout from 'layout'
 import React from 'react'
-import { About, Contact, Hero, Projects } from 'sections'
+import { About, Contact, Hero, Projects } from './sections'
 import { Parallax } from 'react-spring/renderprops-addons.cjs'
 
 const Index = () => (

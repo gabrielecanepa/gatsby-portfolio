@@ -1,14 +1,14 @@
-import { createGlobalStyle, withTheme } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
+export default ({ theme }) => createGlobalStyle`
   *, *:before, *:after {
     box-sizing: inherit;
   }
 
   html {
-    background-color: ${({ theme }) => theme.bg[0]};
+    background-color: ${theme.bg[0]};
     box-sizing: border-box;
-    font-family: ${({ theme }) => theme.fonts.base};
+    font-family: ${theme.fonts.base};
     overflow: hidden;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
@@ -18,10 +18,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body {
-    width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+    width: 100%;
   }
 
   body {
@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${({ theme }) => theme.accent};
+    color: ${theme.accent};
     text-decoration: none;
   }
 
@@ -38,14 +38,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background: ${({ theme }) => theme.accent};
-    color: ${({ theme }) => theme.bg[0]};
+    background: ${theme.accent};
   }
-
-  :not(.switch):focus {
+  :not(.switch):focus { /* TODO: remove rule */
+    box-shadow: ${theme.shadows.box};
     outline: none;
-    box-shadow: ${({ theme }) => theme.shadows.box};
   }
 `
-
-export default withTheme(GlobalStyle)

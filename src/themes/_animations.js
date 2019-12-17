@@ -47,28 +47,27 @@ const upDownWideAnimation = css`
   ${upDownWide} 18s ease-in-out infinite alternate;
 `
 
-export const UpDown = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  animation: ${upDownAnimation};
-`
-
-export const UpDownWide = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  animation: ${upDownWideAnimation};
-`
-
-export const rotateAnimation = length => css`
-  animation: ${rotate} ${length} linear infinite;
-`
-
-export const waveAnimation = length => css`
-  animation: ${wave} ${length} linear infinite alternate;
-`
+export default {
+  rotateAnimation: length => css`
+    animation: ${rotate} ${length} linear infinite;
+  `,
+  waveAnimation: length => css`
+    animation: ${wave} ${length} linear infinite alternate;
+  `,
+  UpDown: () => styled.div`
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: ${upDownAnimation};
+  `,
+  UpDownWide: () => styled.div`
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: ${upDownWideAnimation};
+  `,
+}

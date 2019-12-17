@@ -2,11 +2,10 @@ import React from 'react'
 import styled, { withTheme } from 'styled-components'
 import { Content, Divider } from 'layout'
 import { Svg } from 'components'
-import { UpDown, UpDownWide, waveAnimation } from 'styles/animations'
 
 const WaveWrapper = styled.div`
-  position: absolute;
   bottom: 0;
+  position: absolute;
   width: 100%;
   transform: matrix(1, 0, 0, -1, 0, 0);
 `
@@ -19,9 +18,8 @@ const WaveInner = styled.div`
     width: 100%;
     height: 40vh;
   }
-
   path {
-    ${waveAnimation('20s')};
+    ${({ theme }) => theme.animations.waveAnimation('20s')};
   }
 `
 
@@ -42,30 +40,34 @@ const Wave = () => (
   </WaveWrapper>
 )
 
-const Contact = ({ offset, theme, children }) => (
-  <>
-    <Divider fill={theme.accent} offset={offset} speed={0.2}>
-      <Wave />
-    </Divider>
-    <Content offset={offset} speed={0.4}>
-      {children}
-    </Content>
-    <Divider offset={offset} speed={0.1}>
-      <UpDown>
-        <Svg fill={theme.shapes[0]} hiddenMobile icon="upDown" left="70%" top="20%" width={8} />
-        <Svg icon="triangle" left="25%" stroke={theme.shapes[2]} top="5%" width={8} />
-      </UpDown>
-      <UpDownWide>
-        <Svg fill={theme.shapes[0]} hiddenMobile icon="upDown" left="45%" top="10%" width={8} />
-        <Svg icon="triangle" left="95%" stroke={theme.shapes[1]} top="50%" width={12} />
-        <Svg fill={theme.shapes[1]} icon="circle" left="85%" top="15%" width={6} />
-      </UpDownWide>
-      <Svg fill={theme.shapes[0]} icon="circle" left="70%" top="60%" width={12} />
-      <Svg fill={theme.shapes[0]} icon="box" left="20%" top="30%" width={12} />
-      <Svg icon="hexa" left="80%" stroke={theme.shapes[1]} top="70%" width={8} />
-      <Svg fill={theme.shapes[2]} icon="circle" left="4%" top="20%" width={6} />
-    </Divider>
-  </>
-)
+const Contact = ({ offset, theme, children }) => {
+  const { UpDown, UpDownWide } = theme.animations
+
+  return (
+    <>
+      <Divider fill={theme.accent} offset={offset} speed={0.2}>
+        <Wave />
+      </Divider>
+      <Content offset={offset} speed={0.4}>
+        {children}
+      </Content>
+      <Divider offset={offset} speed={0.1}>
+        <UpDown>
+          <Svg fill={theme.shapes[0]} hiddenMobile icon="upDown" left="70%" top="20%" width={8} />
+          <Svg icon="triangle" left="25%" stroke={theme.shapes[2]} top="5%" width={8} />
+        </UpDown>
+        <UpDownWide>
+          <Svg fill={theme.shapes[0]} hiddenMobile icon="upDown" left="45%" top="10%" width={8} />
+          <Svg icon="triangle" left="95%" stroke={theme.shapes[1]} top="50%" width={12} />
+          <Svg fill={theme.shapes[1]} icon="circle" left="85%" top="15%" width={6} />
+        </UpDownWide>
+        <Svg fill={theme.shapes[0]} icon="circle" left="70%" top="60%" width={12} />
+        <Svg fill={theme.shapes[0]} icon="box" left="20%" top="30%" width={12} />
+        <Svg icon="hexa" left="80%" stroke={theme.shapes[1]} top="70%" width={8} />
+        <Svg fill={theme.shapes[2]} icon="circle" left="4%" top="20%" width={6} />
+      </Divider>
+    </>
+  )
+}
 
 export default withTheme(Contact)

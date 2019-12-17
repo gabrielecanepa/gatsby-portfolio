@@ -13,8 +13,8 @@ const Layout = ({ children }) => {
 
   const switchTheme = useCallback(async () => {
     const nextTheme = theme >= 0 && theme < themes.length - 1 ? theme + 1 : 0
-    await localStorage.setItem('theme', nextTheme)
-    setTheme(nextTheme)
+    await setTheme(nextTheme)
+    localStorage.setItem('theme', nextTheme)
   }, [theme])
 
   return (
@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
       <SEO />
       <Style theme={themes[theme]}>
         <button className="switch" onClick={switchTheme} style={{ position: 'absolute', zIndex: 1 }} type="button">
-          {'Switch'}
+          {'Switch theme'}
         </button>
         {children}
       </Style>

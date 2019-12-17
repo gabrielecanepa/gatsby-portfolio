@@ -1,3 +1,5 @@
+import Global from './_global'
+import animations from './_animations'
 import colors from './_colors'
 import screens from './_screens'
 import shadows from './_shadows'
@@ -6,11 +8,11 @@ import shadows from './_shadows'
 import dark from './dark'
 import light from './light'
 
-const themes = [dark, light]
-
-export default themes.map(theme => ({
+export default [dark, light].map(theme => ({
+  Global,
+  animations,
+  shadows: shadows(theme),
   ...colors,
   ...screens,
   ...theme,
-  shadows: shadows(theme),
 }))
