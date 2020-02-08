@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components'
+import { css, keyframes } from 'styled-components'
 
 const rotate = keyframes`
   from {
@@ -39,14 +39,6 @@ const upDownWide = keyframes`
   }
 `
 
-const upDownAnimation = css`
-  ${upDown} 4s ease-in-out infinite alternate;
-`
-
-const upDownWideAnimation = css`
-  ${upDownWide} 18s ease-in-out infinite alternate;
-`
-
 export default {
   rotateAnimation: length => css`
     animation: ${rotate} ${length} linear infinite;
@@ -54,20 +46,10 @@ export default {
   waveAnimation: length => css`
     animation: ${wave} ${length} linear infinite alternate;
   `,
-  UpDown: () => styled.div`
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    animation: ${upDownAnimation};
+  upDownAnimation: css`
+    ${upDown} 4s ease-in-out infinite alternate;
   `,
-  UpDownWide: () => styled.div`
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    animation: ${upDownWideAnimation};
+  upDownWideAnimation: css`
+    ${upDownWide} 18s ease-in-out infinite alternate;
   `,
 }

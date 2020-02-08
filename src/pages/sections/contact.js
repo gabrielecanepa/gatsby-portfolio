@@ -22,25 +22,26 @@ const Footer = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${({ theme }) => theme.bg[0]};
-  font-size: 0.9rem;
+  color: ${({ theme }) => theme.backgrounds[0]};
   padding: 1.5rem;
   text-align: center;
-
-  @media (min-width: ${({ theme }) => theme.lg}) {
-    font-size: 1.125rem;
-  }
 `
 
 const GatsbyIcon = styled(props => (
   <Link target="_blank" to="https://www.gatsbyjs.org" {...props}>
-    <Svg absolute={false} icon="gatsby" width={5} />
+    <Svg absolute={false} icon="gatsby" width={4.5} />
   </Link>
 ))`
   display: flex;
   align-items: center;
-  fill: ${({ theme }) => theme.purpleDark};
+  font-size: 1.1rem;
   margin: 0 0.3rem;
+  fill: ${({ theme }) => theme.backgrounds[0]};
+  transition: fill 250ms ease-in-out;
+
+  :hover {
+    fill: ${({ theme }) => theme.purpleDark};
+  }
 `
 
 const GitHubLink = styled(props => (
@@ -48,16 +49,15 @@ const GitHubLink = styled(props => (
     {' other amazing tools'}
   </Link>
 ))`
-  color: ${({ theme }) => theme.bg[0]};
-  box-shadow: inset 0 -2px 0 0 ${({ theme }) => theme.bg[0]}40;
-  font-size: 1.05rem;
+  color: ${({ theme }) => theme.backgrounds[0]};
+  box-shadow: inset 0 -2px 0 0 ${({ theme }) => theme.backgrounds[0]}40;
   margin-left: 0.3rem;
 `
 
 const Contact = ({ offset }) => (
   <ContactBg offset={offset}>
     <Inner>
-      <Typography variant="h2">{"let's build something together"}</Typography>
+      <Typography variant="h2">{"Let's build something together?"}</Typography>
       <ContactText>
         {'Say '}
         <a href="mailto:hello@gabrielecanepa.com">{'hi'}</a>
@@ -73,12 +73,10 @@ const Contact = ({ offset }) => (
       </ContactText>
     </Inner>
     <Footer>
-      {`© 2017 - ${new Date().getFullYear()}, with `}
-      {', with '}
+      {`© ${new Date().getFullYear()}, with `}
       <GatsbyIcon />
       {' and'}
       <GitHubLink />
-      {'.'}
     </Footer>
   </ContactBg>
 )

@@ -4,10 +4,8 @@ import { Typography } from 'components'
 
 const Hero = ({ offset }) => (
   <Bg offset={offset}>
-    <Typography variant="h1">{"hi, I'm gabriele."}</Typography>
-    <Typography typed={{ typeSpeed: 40, startDelay: 1800 }} variant="subtitle">
-      {'I create web experiences.'}
-    </Typography>
+    <Typography variant="h1">{'gabriele canepa'}</Typography>
+    <Typography variant="subtitle">{'{ developer & teacher }'}</Typography>
   </Bg>
 )
 

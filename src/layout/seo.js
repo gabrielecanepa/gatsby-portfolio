@@ -112,6 +112,7 @@ const querySEO = graphql`
   }
 `
 
-const SEO = props => <StaticQuery query={querySEO} render={data => <Head {...props} data={data} />} /> // eslint-disable-line
+// eslint-disable-next-line react/jsx-no-bind
+const SEO = props => <StaticQuery query={querySEO} render={data => <Head {...props} data={data} />} />
 
 export default SEO

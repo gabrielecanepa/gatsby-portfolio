@@ -1,14 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
 
-export default ({ theme }) => createGlobalStyle`
+export default createGlobalStyle`
   *, *:before, *:after {
     box-sizing: inherit;
   }
 
   html {
-    background-color: ${theme.bg[0]};
+    background-color: ${({ theme }) => theme.backgrounds[0]};
     box-sizing: border-box;
-    font-family: ${theme.fonts.base};
+    font-family: ${({ theme }) => theme.fonts.base};
     overflow: hidden;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
@@ -29,7 +29,7 @@ export default ({ theme }) => createGlobalStyle`
   }
 
   a {
-    color: ${theme.accent};
+    color: ${({ theme }) => theme.accent};
     text-decoration: none;
   }
 
@@ -38,10 +38,10 @@ export default ({ theme }) => createGlobalStyle`
   }
 
   ::selection {
-    background: ${theme.accent};
+    background: ${({ theme }) => theme.accent};
   }
   :not(.switch):focus { /* TODO: remove rule */
-    box-shadow: ${theme.shadows.box};
+    box-shadow: ${({ theme }) => theme.boxShadow(theme.accent)};
     outline: none;
   }
 `

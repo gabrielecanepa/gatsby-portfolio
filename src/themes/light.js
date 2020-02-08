@@ -8,7 +8,7 @@ export default {
   },
   // colors
   accent: colors.blue,
-  bg: [colors.white, colors.grayLightest],
+  backgrounds: [colors.white, colors.grayLightest],
   shapes: [colors.grayLighter, colors.grayLight, colors.gray],
   texts: [colors.blueBlack, colors.blueGray, colors.grayDarkest],
 }

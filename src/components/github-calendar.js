@@ -30,7 +30,7 @@ const GitHubCalendar = ({ username, text = '', responsive = true, showStats = fa
   }, [options, username])
 
   return (
-    <div className="diocan" ref={ref} style={enhancedStyle} {...rest}>
+    <div ref={ref} style={enhancedStyle} {...rest}>
       {isLoading && (<Loader /> || <p>{'Loading GitHub...'}</p>)}
     </div>
   )
