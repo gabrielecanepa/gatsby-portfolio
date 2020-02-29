@@ -7,12 +7,13 @@ const StyledProject = styled(Project)`
   background-image: url(${leWagonBg});
   color: #161719;
 
-  svg {
-    margin: -0.5em 0;
-  }
   *::selection {
     background: #fd1015;
     color: white;
+  }
+
+  svg {
+    margin: -0.5em 0;
   }
 `
 

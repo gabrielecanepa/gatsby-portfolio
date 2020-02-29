@@ -10,9 +10,9 @@ const config = {
   keywords: packageJson.keywords.join(', '),
   url: packageJson.homepage,
   version: packageJson.version,
-  themeColor: '#141821',
+  themeColor: '#24292e',
   language: 'en',
-  image: 'logo.png',
+  image: 'avatar.svg',
 }
 
 module.exports = {
@@ -27,13 +27,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
-        logo: `${__dirname}/static/${config.image}`,
+        logo: `${__dirname}/src/images/${config.image}`,
         appName: config.titleShort,
         appDescription: config.description,
         developerName: config.author,
         developerURL: config.url,
         lang: config.language,
-        background: config.themeColor,
+        background: '#fafbfc',
         theme_color: config.themeColor,
         version: config.version,
         start_url: '/',

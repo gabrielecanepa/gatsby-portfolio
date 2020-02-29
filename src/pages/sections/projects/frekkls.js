@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Button, Project } from 'components'
-import { FrekklsLogo } from 'images'
+import { LeWagonLogo } from 'images'
 
 const StyledProject = styled(Project)`
   background: linear-gradient(132deg, rgb(255, 132, 62), rgb(255, 108, 64) 52%, rgb(255, 86, 66));
@@ -31,7 +31,7 @@ const Frekkls = () => (
         </Button>
       </>
     }
-    cover={<FrekklsLogo />}
+    cover={<LeWagonLogo />}
   />
 )
 

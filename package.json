@@ -1,8 +1,8 @@
 {
   "name": "gatsby-portfolio",
-  "title": "gabriele canepa { developer & teacher }",
+  "title": "gabrielecanepa",
   "titleShort": "gabrielecanepa",
-  "description": "Personal portfolio built with Gatsby and styled-components.",
+  "description": "Portfolio with parallax effects and animations built with Gatsby and styled-components",
   "author": {
     "name": "Gabriele Canepa",
     "email": "hello@gabrielecanepa.com"
@@ -15,9 +15,10 @@
   "keywords": [
     "gatsby",
     "portfolio",
-    "website",
+    "animations",
     "react",
-    "styled-components"
+    "styled-components",
+    "github"
   ],
   "version": "0.1.0",
   "license": "MIT",

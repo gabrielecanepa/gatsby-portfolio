@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Button, Project } from 'components'
-import { upToUsLogo } from 'images'
 
 const StyledProject = styled(Project)`
   background: #fff;
@@ -27,7 +26,6 @@ const Freelance = () => (
         </Button>
       </>
     }
-    cover={<img alt="UpToUs" src={upToUsLogo} />}
   />
 )
 
