@@ -8,10 +8,10 @@ const Content = styled(ParallaxLayer)`
   z-index: 50;
   padding: 1.5rem;
 
-  @media (min-width: ${({ theme }) => theme.md}) {
+  @media (min-width: ${({ theme }) => theme.screens.md}) {
     padding: 2rem;
   }
-  @media (min-width: ${({ theme }) => theme.lg}) {
+  @media (min-width: ${({ theme }) => theme.screens.lg}) {
     padding: 4rem;
   }
 `

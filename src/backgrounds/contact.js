@@ -19,14 +19,14 @@ const WaveInner = styled.div`
     height: 40vh;
   }
   path {
-    ${({ theme }) => theme.waveAnimation('20s')};
+    ${({ theme }) => theme.animations.wave};
   }
 `
 
 const Wave = () => (
   <WaveWrapper>
     <WaveInner>
-      <svg preserveAspectRatio="none" viewBox="0 0 800 338.05" xmlns="http://www.w3.org/2000/svg">
+      <svg preserveAspectRatio="none" viewBox="0 0 800 338.05">
         <path>
           <animate
             attributeName="d"

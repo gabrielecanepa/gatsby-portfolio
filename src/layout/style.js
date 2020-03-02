@@ -1,12 +1,13 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import { useTheme } from 'ext/hooks'
 
-const Style = ({ theme, children }) => {
-  const { GlobalStyle } = theme
+const Style = ({ children }) => {
+  const { theme } = useTheme()
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      <theme.global />
       {children}
     </ThemeProvider>
   )

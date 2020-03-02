@@ -13,10 +13,10 @@ const Wrapper = styled.div`
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
 
-  @media (max-width: ${({ theme }) => theme.xl}) {
+  @media (max-width: ${({ theme }) => theme.screens.xl}) {
     grid-gap: 3rem;
   }
-  @media (max-width: ${({ theme }) => theme.lg}) {
+  @media (max-width: ${({ theme }) => theme.screens.lg}) {
     grid-gap: 2rem;
     display: block;
   }

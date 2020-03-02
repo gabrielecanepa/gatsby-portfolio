@@ -6,7 +6,7 @@ export const UpDownAnimation = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  animation: ${({ theme }) => theme.upDownAnimation};
+  animation: ${({ theme }) => theme.animations.upDown};
 `
 
 export const UpDownWideAnimation = styled.div`
@@ -15,5 +15,5 @@ export const UpDownWideAnimation = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  animation: ${({ theme }) => theme.upDownWideAnimation};
+  animation: ${({ theme }) => theme.animations.upDownWide};
 `

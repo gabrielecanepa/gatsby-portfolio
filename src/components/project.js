@@ -52,7 +52,7 @@ const StyledProject = styled.div`
     }
   }
 
-  @media (max-width: ${({ theme }) => theme.lg}) {
+  @media (max-width: ${({ theme }) => theme.screens.lg}) {
     margin: 2rem 0;
   }
 `

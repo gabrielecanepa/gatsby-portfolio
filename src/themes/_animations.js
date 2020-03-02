@@ -1,14 +1,5 @@
 import { css, keyframes } from 'styled-components'
 
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`
-
 const wave = keyframes`
   0% {
     d: path("M 0 100 Q 250 50 400 200 Q 550 350 800 300 L 800 0 L 0 0 L 0 100 Z");
@@ -40,16 +31,13 @@ const upDownWide = keyframes`
 `
 
 export default {
-  rotateAnimation: length => css`
-    animation: ${rotate} ${length} linear infinite;
+  wave: css`
+    animation: ${wave} 20s linear infinite alternate;
   `,
-  waveAnimation: length => css`
-    animation: ${wave} ${length} linear infinite alternate;
-  `,
-  upDownAnimation: css`
+  upDown: css`
     ${upDown} 4s ease-in-out infinite alternate;
   `,
-  upDownWideAnimation: css`
-    ${upDownWide} 18s ease-in-out infinite alternate;
+  upDownWide: css`
+    ${upDownWide} 16s ease-in-out infinite alternate;
   `,
 }

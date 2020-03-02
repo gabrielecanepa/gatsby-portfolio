@@ -40,8 +40,4 @@ export default createGlobalStyle`
   ::selection {
     background: ${({ theme }) => theme.accent};
   }
-  :not(.switch):focus { /* TODO: remove rule */
-    box-shadow: ${({ theme }) => theme.boxShadow(theme.accent)};
-    outline: none;
-  }
 `

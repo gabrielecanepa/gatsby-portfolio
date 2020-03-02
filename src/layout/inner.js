@@ -4,10 +4,10 @@ const Inner = styled.div`
   width: 100%;
   text-align: ${({ alignCenter }) => (alignCenter ? 'center' : 'left')};
 
-  @media (min-width: ${({ theme }) => theme.lg}) {
+  @media (min-width: ${({ theme }) => theme.screens.lg}) {
     text-align: left;
   }
-  @media (min-width: ${({ theme }) => theme.xxl}) {
+  @media (min-width: ${({ theme }) => theme.screens.xxl}) {
     width: 66.6%;
   }
 `

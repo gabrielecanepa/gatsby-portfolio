@@ -5,13 +5,13 @@ import { Inner } from 'layout'
 import { Link, Svg, Typography } from 'components'
 
 const ContactText = styled.p`
-  color: ${({ theme }) => theme.texts[1]};
+  color: ${({ theme }) => theme.foregrounds[1]};
   font-size: 1.25rem;
 
-  @media (min-width: ${({ theme }) => theme.md}) {
+  @media (min-width: ${({ theme }) => theme.screens.md}) {
     font-size: 1.5rem;
   }
-  @media (min-width: ${({ theme }) => theme.lg}) {
+  @media (min-width: ${({ theme }) => theme.screens.lg}) {
     font-size: 1.875rem;
   }
 `
@@ -40,7 +40,7 @@ const GatsbyIcon = styled(props => (
   transition: fill 250ms ease-in-out;
 
   :hover {
-    fill: ${({ theme }) => theme.purpleDark};
+    fill: ${({ theme }) => theme.colors.purpleDark};
   }
 `
 

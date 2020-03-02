@@ -10,37 +10,37 @@ const Hero = styled.div`
   flex-direction: column;
   margin-top: 2rem;
 
-  @media (min-width: ${({ theme }) => theme.lg}) {
+  @media (min-width: ${({ theme }) => theme.screens.lg}) {
     flex-direction: row;
   }
 `
 
 const Subtitle = styled.span`
-  color: ${({ theme }) => theme.texts[1]};
+  color: ${({ theme }) => theme.foregrounds[1]};
   font-size: 1.5rem;
   padding-top: 3rem;
 
-  @media (min-width: ${({ theme }) => theme.lg}) {
+  @media (min-width: ${({ theme }) => theme.screens.lg}) {
     font-size: 1.875rem;
     padding-left: 3rem;
     padding-top: 0;
   }
-  @media (min-width: ${({ theme }) => theme.xl}) {
+  @media (min-width: ${({ theme }) => theme.screens.xl}) {
     font-size: 2.25rem;
   }
 `
 
 const Description = styled.p`
-  color: ${({ theme }) => theme.texts[2]};
+  color: ${({ theme }) => theme.foregrounds[2]};
   font-size: 1.125rem;
   padding-top: 1.5rem;
   text-align: justify;
 
-  @media (min-width: ${({ theme }) => theme.md}) {
+  @media (min-width: ${({ theme }) => theme.screens.md}) {
     font-size: 1.25rem;
     padding-top: 3rem;
   }
-  @media (min-width: ${({ theme }) => theme.lg}) {
+  @media (min-width: ${({ theme }) => theme.screens.lg}) {
     font-size: 1.5rem;
   }
 `

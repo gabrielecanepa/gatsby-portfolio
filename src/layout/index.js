@@ -1,34 +1,17 @@
 import Content from './content'
 import Divider from './divider'
 import Inner from './inner'
-import React, { useCallback, useEffect, useState } from 'react'
+import React from 'react'
 import SEO from './seo'
 import Style from './style'
-import themes from 'themes'
+import { StoreProvider } from 'ext/hooks/store'
 
-const Layout = ({ children }) => {
-  const [theme, setTheme] = useState(0)
-
-  useEffect(() => setTheme(parseInt(localStorage.getItem('theme') || 0)), [])
-
-  const switchTheme = useCallback(async () => {
-    const nextTheme = theme >= 0 && theme < themes.length - 1 ? theme + 1 : 0
-    await setTheme(nextTheme)
-    localStorage.setItem('theme', nextTheme)
-  }, [theme])
-
-  return (
-    <>
-      <SEO />
-      <Style theme={themes[theme]}>
-        <button className="switch" onClick={switchTheme} style={{ position: 'absolute', zIndex: 1 }} type="button">
-          {'Switch theme'}
-        </button>
-        {children}
-      </Style>
-    </>
-  )
-}
+const Layout = ({ children }) => (
+  <StoreProvider>
+    <SEO />
+    <Style>{children}</Style>
+  </StoreProvider>
+)
 
 export default Layout
 export { Content, Divider, Inner }

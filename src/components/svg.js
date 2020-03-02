@@ -11,7 +11,7 @@ const SvgBase = styled.svg`
   ${({ stroke }) => stroke && `stroke: ${stroke};`}
 
 
-  @media (max-width: ${({ theme }) => theme.md}) {
+  @media (max-width: ${({ theme }) => theme.screens.md}) {
     ${({ hiddenMobile }) => hiddenMobile && 'display: none;'}
   }
 `
