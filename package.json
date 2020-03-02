@@ -43,6 +43,7 @@
     "typeface-open-sans": "^0.0.54"
   },
   "devDependencies": {
+    "@hot-loader/react-dom": "16.8.6",
     "babel-plugin-styled-components": "^1.10.6",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-import": "^2.16.0",
