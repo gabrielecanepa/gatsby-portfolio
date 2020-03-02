@@ -1,3 +1,8 @@
+export const getLocalStorageItem = name => (typeof window === 'undefined' ? null : window.localStorage.getItem(name))
+
+export const setLocalStorageItem = (name, value) =>
+  typeof window === 'undefined' ? null : window.localStorage.setItem(name, value)
+
 export const shadeColor = (color, amount) =>
   `#${color
     .replace(/^#/, '')
