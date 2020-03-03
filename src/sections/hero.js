@@ -10,11 +10,11 @@ const StyledAvatar = styled(Avatar)`
 `
 
 const Hero = ({ offset }) => {
-  const { switchTheme } = useTheme()
+  const { setRandomTheme } = useTheme()
 
   return (
     <Bg offset={offset}>
-      <StyledAvatar onClick={switchTheme} />
+      <StyledAvatar onClick={setRandomTheme} />
       <Typography variant="subtitle">{"['developer', 'teacher']"}</Typography>
     </Bg>
   )

@@ -6,6 +6,7 @@ export default {
   fonts: {
     base: fonts.sans,
     title: fonts.mono,
+    mono: fonts.mono,
   },
   // colors
   accent: colors.blue,
