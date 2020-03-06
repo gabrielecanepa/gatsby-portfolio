@@ -16,7 +16,7 @@ const Hero = styled.div`
 `
 
 const Subtitle = styled.span`
-  color: ${({ theme }) => theme.foregrounds[1]};
+  color: ${({ theme }) => theme.colors.texts[1]};
   font-size: 1.5rem;
   padding-top: 3rem;
 
@@ -31,7 +31,7 @@ const Subtitle = styled.span`
 `
 
 const Description = styled.p`
-  color: ${({ theme }) => theme.foregrounds[2]};
+  color: ${({ theme }) => theme.colors.texts[2]};
   font-size: 1.125rem;
   padding-top: 1.5rem;
   text-align: justify;

@@ -8,14 +8,21 @@ const useTheme = () => {
 
   const availableThemes = useMemo(() => Object.keys(themes), [])
 
+  const setStoreAndLocalStorageTheme = useCallback(
+    theme => {
+      setStore({ theme })
+      setLocalStorageItem('theme', theme)
+    },
+    [setStore]
+  )
+
   useEffect(() => {
     if (store.theme) return
     const localStorageTheme = getLocalStorageItem('theme')
     if (availableThemes.includes(localStorageTheme)) {
       setStore({ theme: localStorageTheme })
     } else {
-      setStore({ theme: availableThemes[0] })
-      setLocalStorageItem('theme', availableThemes[0])
+      setStoreAndLocalStorageTheme(availableThemes[0])
     }
   })
 
@@ -26,32 +33,33 @@ const useTheme = () => {
       : availableThemes.includes(localStorageTheme)
       ? themes[localStorageTheme]
       : themes[availableThemes[0]]
-    return { ...activeTheme, ...baseTheme }
+    return {
+      ...activeTheme,
+      ...baseTheme,
+      colors: { ...activeTheme.colors, ...baseTheme.colors }, // merge colors
+    }
   }, [availableThemes, store.theme])
 
   const setTheme = useCallback(
     theme => {
       if (!availableThemes.includes(theme)) return
-      setStore({ theme })
-      setLocalStorageItem('theme', theme)
+      setStoreAndLocalStorageTheme(theme)
     },
-    [availableThemes, setStore]
+    [availableThemes, setStoreAndLocalStorageTheme]
   )
 
   const setRandomTheme = useCallback(() => {
     const randomTheme = availableThemes.filter(availableTheme => availableTheme !== theme.name)[
       Math.floor(Math.random() * (availableThemes.length - 1))
     ]
-    setStore({ theme: randomTheme })
-    setLocalStorageItem('theme', randomTheme)
-  }, [availableThemes, setStore, theme.name])
+    setStoreAndLocalStorageTheme(randomTheme)
+  }, [availableThemes, setStoreAndLocalStorageTheme, theme.name])
 
   const switchTheme = useCallback(() => {
     const themeIndex = availableThemes.indexOf(theme.name) + 1
     const nextTheme = availableThemes[themeIndex === availableThemes.length ? 0 : themeIndex]
-    setStore({ theme: nextTheme })
-    setLocalStorageItem('theme', nextTheme)
-  }, [availableThemes, setStore, theme.name])
+    setStoreAndLocalStorageTheme(nextTheme)
+  }, [availableThemes, setStoreAndLocalStorageTheme, theme.name])
 
   return { theme, setTheme, setRandomTheme, switchTheme }
 }

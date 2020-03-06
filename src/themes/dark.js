@@ -8,9 +8,10 @@ export default {
     title: fonts.serif,
     mono: fonts.mono,
   },
-  // colors
-  accent: colors.blueLighter,
-  foregrounds: [colors.white, colors.grayLighter, colors.grayLight],
-  backgrounds: [colors.blueBlack, colors.blueGray],
-  shapes: [colors.grayDarkest, colors.grayDarker, colors.grayDark],
+  colors: {
+    accent: colors.blue,
+    backgrounds: [colors.blueBlack, colors.blueGray],
+    shapes: [colors.grayDarkest, colors.grayDarker, colors.grayDark],
+    texts: [colors.white, colors.grayLighter, colors.grayLight],
+  },
 }
