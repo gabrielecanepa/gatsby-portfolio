@@ -6,7 +6,7 @@ export default createGlobalStyle`
   }
 
   html {
-    background-color: ${({ theme }) => theme.backgrounds[0]};
+    background-color: ${({ theme }) => theme.colors.backgrounds[0]};
     box-sizing: border-box;
     font-family: ${({ theme }) => theme.fonts.base};
     overflow: hidden;
@@ -29,7 +29,7 @@ export default createGlobalStyle`
   }
 
   a {
-    color: ${({ theme }) => theme.accent};
+    color: ${({ theme }) => theme.colors.accent};
     text-decoration: none;
   }
 
@@ -38,6 +38,7 @@ export default createGlobalStyle`
   }
 
   ::selection {
-    background: ${({ theme }) => theme.accent};
+    background: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.colors.backgrounds[0]};
   }
 `

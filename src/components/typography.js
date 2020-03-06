@@ -2,36 +2,36 @@ import React from 'react'
 import styled from 'styled-components'
 
 const H1 = styled.h1`
-  color: ${({ theme }) => theme.foregrounds[0]};
+  color: ${({ theme }) => theme.colors.texts[0]};
   font-family: ${({ theme }) => theme.fonts.mono};
   font-size: 4rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  text-shadow: ${({ theme }) => theme.shadows.text(theme.accent)};
+  text-shadow: ${({ theme }) => theme.shadows.text(theme.colors.accent)};
 `
 
 const H2 = styled.h2`
-  color: ${({ theme }) => theme.foregrounds[0]};
+  color: ${({ theme }) => theme.colors.texts[0]};
   display: inline-block;
   font-family: ${({ theme }) => theme.fonts.mono};
   font-size: 2.25rem;
   letter-spacing: 0.025em;
   margin-bottom: 2rem;
   position: relative;
-  text-shadow: ${({ theme }) => theme.shadows.text(theme.accent)};
+  text-shadow: ${({ theme }) => theme.shadows.text(theme.colors.accent)};
 `
 
 const Subtitle = styled.p`
-  color: ${({ theme }) => theme.foregrounds[1]};
+  color: ${({ theme }) => theme.colors.texts[1]};
   font-family: ${({ theme }) => theme.fonts.mono};
   font-size: 2.5rem;
   margin-top: 2rem;
   text-align: center;
-  text-shadow: ${({ theme }) => theme.shadows.text(theme.accent)};
+  text-shadow: ${({ theme }) => theme.shadows.text(theme.colors.accent)};
 `
 
 const P = styled.p`
-  color: ${({ theme }) => theme.foregrounds[0]};
+  color: ${({ theme }) => theme.colors.texts[0]};
   font-family: ${({ theme }) => theme.fonts.base};
 `
 
