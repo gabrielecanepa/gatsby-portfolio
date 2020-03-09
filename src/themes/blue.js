@@ -6,10 +6,9 @@ export default {
   fonts: {
     base: fonts.sans,
     title: fonts.mono,
-    mono: fonts.mono,
   },
   colors: {
-    accent: colors.blueDark,
+    accent: colors.orange,
     backgrounds: [colors.blue, colors.blueDark],
     shapes: [colors.yellowDark, colors.orange, colors.redDark],
     texts: [colors.white, colors.grayLighter, colors.grayLight],

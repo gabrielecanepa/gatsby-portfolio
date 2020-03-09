@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 
 const Projects = ({ offset, ...props }) => (
   <Bg offset={offset} {...props}>
-    <Typography variant="h2">{'what I do:'}</Typography>
+    <Typography variant="h2">{'What I do:'}</Typography>
     <Wrapper>
       <Frekkls />
       <LeWagon />

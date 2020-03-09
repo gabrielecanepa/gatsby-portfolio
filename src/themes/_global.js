@@ -8,6 +8,7 @@ export default createGlobalStyle`
   html {
     background-color: ${({ theme }) => theme.colors.backgrounds[0]};
     box-sizing: border-box;
+    color: ${({ theme }) => theme.colors.texts[0]};
     font-family: ${({ theme }) => theme.fonts.base};
     overflow: hidden;
     text-rendering: optimizeLegibility;

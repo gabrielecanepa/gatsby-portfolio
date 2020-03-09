@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Contact as ContactBg } from 'backgrounds'
+import { Icon, Link, Typography } from 'components'
 import { Inner } from 'layout'
-import { Link, Svg, Typography } from 'components'
 
 const ContactText = styled.p`
   color: ${({ theme }) => theme.colors.texts[1]};
@@ -29,7 +29,7 @@ const Footer = styled.footer`
 
 const GatsbyIcon = styled(props => (
   <Link target="_blank" to="https://www.gatsbyjs.org" {...props}>
-    <Svg absolute={false} icon="gatsby" width={4.5} />
+    <Icon name="gatsby" width={4.5} />
   </Link>
 ))`
   display: flex;
@@ -60,15 +60,15 @@ const Contact = ({ offset }) => (
       <Typography variant="h2">{"Let's build something together?"}</Typography>
       <ContactText>
         {'Say '}
-        <a href="mailto:hello@gabrielecanepa.com">{'hi'}</a>
+        <Link href="mailto:hello@gabrielecanepa.com">{'hi'}</Link>
         {' or find me on other platforms: '}
-        <a href="https://github.com/gabrielecanepa" rel="noopener noreferrer" target="_blank">
+        <Link href="https://github.com/gabrielecanepa" rel="noopener noreferrer" target="_blank">
           {'GitHub'}
-        </a>
+        </Link>
         {' and '}
-        <a href="https://linkedin.com/in/gabrielecanepa" rel="noopener noreferrer" target="_blank">
+        <Link href="https://linkedin.com/in/gabrielecanepa" rel="noopener noreferrer" target="_blank">
           {'LinkedIn'}
-        </a>
+        </Link>
         {'.'}
       </ContactText>
     </Inner>

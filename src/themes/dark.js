@@ -5,8 +5,7 @@ export default {
   name: 'dark',
   fonts: {
     base: fonts.sans,
-    title: fonts.serif,
-    mono: fonts.mono,
+    title: fonts.mono,
   },
   colors: {
     accent: colors.blue,

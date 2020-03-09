@@ -6,8 +6,8 @@ const DividerBase = styled(ParallaxLayer)`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: ${({ bg }) => bg};
-  clip-path: ${({ clipPath }) => clipPath};
+  ${({ bg }) => bg && `background: ${bg}`};
+  ${({ clipPath }) => clipPath && `clip-path: ${clipPath}`};
 
   svg {
     fill: ${({ fill }) => fill};

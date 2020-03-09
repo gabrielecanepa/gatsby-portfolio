@@ -1,38 +1,31 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+const baseHeadingStyle = css`
+  font-family: ${({ theme }) => theme.fonts.title};
+  text-shadow: ${({ theme }) => theme.shadows.text(theme.colors.accent)};
+`
 
 const H1 = styled.h1`
   color: ${({ theme }) => theme.colors.texts[0]};
-  font-family: ${({ theme }) => theme.fonts.mono};
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  text-shadow: ${({ theme }) => theme.shadows.text(theme.colors.accent)};
+  font-size: 3.6rem;
+  margin: 1.2rem 0;
+  ${baseHeadingStyle}
 `
 
 const H2 = styled.h2`
-  color: ${({ theme }) => theme.colors.texts[0]};
-  display: inline-block;
-  font-family: ${({ theme }) => theme.fonts.mono};
-  font-size: 2.25rem;
+  color: ${({ theme }) => theme.colors.texts[1]};
+  font-size: 2.2rem;
   letter-spacing: 0.025em;
-  margin-bottom: 2rem;
-  position: relative;
-  text-shadow: ${({ theme }) => theme.shadows.text(theme.colors.accent)};
+  margin-bottom: 1rem 0;
+  ${baseHeadingStyle}
 `
 
 const Subtitle = styled.p`
-  color: ${({ theme }) => theme.colors.texts[1]};
-  font-family: ${({ theme }) => theme.fonts.mono};
-  font-size: 2.5rem;
-  margin-top: 2rem;
-  text-align: center;
-  text-shadow: ${({ theme }) => theme.shadows.text(theme.colors.accent)};
-`
-
-const P = styled.p`
-  color: ${({ theme }) => theme.colors.texts[0]};
-  font-family: ${({ theme }) => theme.fonts.base};
+  color: ${({ theme }) => theme.colors.texts[2]};
+  font-size: 1.8rem;
+  margin: 0.8rem 0;
+  ${baseHeadingStyle}
 `
 
 const Typography = ({ variant, ...props }) => {
@@ -44,7 +37,7 @@ const Typography = ({ variant, ...props }) => {
     case 'subtitle':
       return <Subtitle {...props} />
     default:
-      return <P {...props} />
+      return <p {...props} />
   }
 }
 

@@ -47,9 +47,9 @@ const Description = styled.p`
 
 const About = ({ offset }) => (
   <Bg offset={offset}>
-    <Typography variant="h2">{'about me:'}</Typography>
+    <Typography variant="h2">{'About me:'}</Typography>
     <Hero>
-      <Avatar width="20%" />
+      <Avatar width="20" />
       <Subtitle>
         {
           "The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating Emoji into my speech to better express myself. Winky face."

@@ -1,37 +1,37 @@
 import React from 'react'
 import { Content, Divider, Inner } from 'layout'
-import { Svg, UpDownAnimation, UpDownWideAnimation } from 'components'
+import { Icon, UpDownAnimation, UpDownWideAnimation } from 'components'
 import { withTheme } from 'styled-components'
 
 const Hero = ({ offset, theme, children }) => (
   <>
     <Divider offset={offset} speed={0.2}>
       <UpDownAnimation>
-        <Svg fill={theme.colors.blueLight} icon="react" left="10%" top="20%" width={48} />
-        <Svg fill={theme.colors.red} hiddenMobile icon="rails" left="40%" top="90%" width={32} />
-        <Svg fill={theme.colors.shapes[1]} hiddenMobile icon="circle" left="40%" top="20%" width={24} />
-        <Svg fill={theme.colors.shapes[1]} icon="box" left="60%" top="15%" width={6} />
+        <Icon fill={theme.colors.blueLight} left="10" name="react" size="xxl" top="20" />
+        <Icon fill={theme.colors.red} hiddenMobile left="40" name="rails" size="xl" top="90" />
+        <Icon fill={theme.colors.shapes[1]} hiddenMobile left="40" name="circle" size="lg" top="20" />
+        <Icon fill={theme.colors.shapes[1]} left="60" name="box" size="xs" top="15" />
       </UpDownAnimation>
       <UpDownWideAnimation>
-        <Svg fill={theme.colors.blueDark} icon="css" left="80%" top="10%" width={22} />
-        <Svg fill={theme.colors.shapes[0]} hiddenMobile icon="box" left="5%" top="90%" width={48} />
-        <Svg fill={theme.colors.shapes[0]} hiddenMobile icon="upDown" left="45%" top="10%" width={8} />
-        <Svg fill={theme.colors.shapes[0]} icon="circle" left="75%" top="10%" width={6} />
-        <Svg icon="triangle" left="30%" stroke={theme.colors.shapes[0]} top="65%" width={16} />
-        <Svg icon="triangle" left="90%" stroke={theme.colors.shapes[0]} top="50%" width={12} />
-        <Svg fill={theme.colors.shapes[2]} icon="circle" left="70%" top="90%" width={16} />
-        <Svg fill={theme.colors.shapes[2]} hiddenMobile icon="box" left="28%" top="15%" width={16} />
+        <Icon fill={theme.colors.yellow} left="80" name="js" size="lg" top="10" />
+        <Icon fill={theme.colors.shapes[0]} hiddenMobile left="5" name="box" size="xxl" top="90" />
+        <Icon fill={theme.colors.shapes[0]} hiddenMobile left="45" name="upDown" size="xs" top="10" />
+        <Icon fill={theme.colors.shapes[0]} left="75" name="circle" size="xs" top="10" />
+        <Icon left="30" name="triangle" size="md" stroke={theme.colors.shapes[0]} top="65" />
+        <Icon left="90" name="triangle" size="sm" stroke={theme.colors.shapes[0]} top="50" />
+        <Icon fill={theme.colors.shapes[2]} left="70" name="circle" size="md" top="90" />
+        <Icon fill={theme.colors.shapes[2]} hiddenMobile left="28" name="box" size="md" top="15" />
       </UpDownWideAnimation>
-      <Svg fill={theme.colors.yellow} icon="js" left="5%" top="70%" width={24} />
-      <Svg fill={theme.colors.shapes[0]} icon="upDown" left="60%" top="70%" width={24} />
-      <Svg fill={theme.colors.shapes[0]} icon="circle" left="50%" top="60%" width={12} />
-      <Svg fill={theme.colors.shapes[0]} icon="upDown" left="95%" top="90%" width={8} />
-      <Svg fill={theme.colors.shapes[0]} icon="circle" left="4%" top="20%" width={6} />
-      <Svg fill={theme.colors.shapes[1]} icon="box" left="10%" top="10%" width={8} />
-      <Svg fill={theme.colors.shapes[0]} icon="circle" left="95%" top="5%" width={32} />
-      <Svg icon="hexa" left="10%" stroke={theme.colors.shapes[2]} top="50%" width={16} />
-      <Svg icon="hexa" left="80%" stroke={theme.colors.shapes[2]} top="70%" width={8} />
-      <Svg icon="triangle" left="25%" stroke={theme.colors.shapes[2]} top="5%" width={8} />
+      <Icon fill={theme.colors.blueDark} left="5" name="css" size="lg" top="70" />
+      <Icon fill={theme.colors.shapes[0]} left="60" name="upDown" size="lg" top="70" />
+      <Icon fill={theme.colors.shapes[0]} left="50" name="circle" size="sm" top="60" />
+      <Icon fill={theme.colors.shapes[0]} left="95" name="upDown" size="xs" top="90" />
+      <Icon fill={theme.colors.shapes[0]} left="4" name="circle" size="xs" top="20" />
+      <Icon fill={theme.colors.shapes[1]} left="10" name="box" size="xs" top="10" />
+      <Icon fill={theme.colors.shapes[0]} left="95" name="circle" size="xl" top="5" />
+      <Icon left="10" name="hexa" size="md" stroke={theme.colors.shapes[2]} top="50" />
+      <Icon left="80" name="hexa" size="xs" stroke={theme.colors.shapes[2]} top="70" />
+      <Icon left="25" name="triangle" size="xs" stroke={theme.colors.shapes[2]} top="5" />
     </Divider>
     <Content offset={offset} speed={0.4}>
       <Inner>{children}</Inner>

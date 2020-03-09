@@ -1,6 +1,6 @@
 import React from 'react'
 import { Content, Divider, Inner } from 'layout'
-import { Svg, UpDownAnimation, UpDownWideAnimation } from 'components'
+import { Icon, UpDownAnimation, UpDownWideAnimation } from 'components'
 import { withTheme } from 'styled-components'
 
 const About = ({ offset, theme, children }) => (
@@ -13,22 +13,22 @@ const About = ({ offset, theme, children }) => (
     />
     <Divider offset={offset} speed={0.1}>
       <UpDownAnimation>
-        <Svg fill={theme.colors.blueDark} icon="sql" left="80%" top="80%" width={24} />
-        <Svg fill={theme.colors.blue} icon="do" left="50%" top="75%" width={6} />
-        <Svg fill={theme.colors.shapes[0]} hiddenMobile icon="upDown" left="70%" top="20%" width={8} />
-        <Svg icon="triangle" left="25%" stroke={theme.colors.shapes[1]} top="5%" width={8} />
+        <Icon fill={theme.colors.blueDark} left="80" name="sql" size="lg" top="80" />
+        <Icon fill={theme.colors.blue} left="50" name="do" size="xs" top="75" />
+        <Icon fill={theme.colors.shapes[0]} hiddenMobile left="70" name="upDown" size="xs" top="20" />
+        <Icon left="25" name="triangle" size="xs" stroke={theme.colors.shapes[1]} top="5" />
       </UpDownAnimation>
       <UpDownWideAnimation>
-        <Svg fill={theme.colors.blueDark} icon="docker" left="5%" top="80%" width={16} />
-        <Svg fill={theme.colors.shapes[2]} hiddenMobile icon="upDown" left="45%" top="10%" width={8} />
-        <Svg icon="triangle" left="95%" stroke={theme.colors.shapes[2]} top="50%" width={12} />
-        <Svg fill={theme.colors.shapes[2]} icon="circle" left="85%" top="15%" width={6} />
+        <Icon fill={theme.colors.blueDark} left="5" name="docker" size="md" top="80" />
+        <Icon fill={theme.colors.shapes[2]} hiddenMobile left="45" name="upDown" size="xs" top="10" />
+        <Icon left="95" name="triangle" size="sm" stroke={theme.colors.shapes[2]} top="50" />
+        <Icon fill={theme.colors.shapes[2]} left="85" name="circle" size="xs" top="15" />
       </UpDownWideAnimation>
-      <Svg fill={theme.colors.purple} hiddenMobile icon="heroku" left="10%" top="10%" width={12} />
-      <Svg fill={theme.colors.shapes[0]} icon="circle" left="70%" top="60%" width={12} />
-      <Svg fill={theme.colors.shapes[0]} icon="box" left="20%" top="30%" width={12} />
-      <Svg icon="hexa" left="80%" stroke={theme.colors.shapes[1]} top="70%" width={8} />
-      <Svg fill={theme.colors.shapes[2]} icon="circle" left="4%" top="20%" width={6} />
+      <Icon fill={theme.colors.purple} hiddenMobile left="10" name="heroku" size="sm" top="10" />
+      <Icon fill={theme.colors.shapes[0]} left="70" name="circle" size="sm" top="60" />
+      <Icon fill={theme.colors.shapes[0]} left="20" name="box" size="sm" top="30" />
+      <Icon left="80" name="hexa" size="xs" stroke={theme.colors.shapes[1]} top="70" />
+      <Icon fill={theme.colors.shapes[2]} left="4" name="circle" size="xs" top="20" />
     </Divider>
     <Content offset={offset} speed={0.4}>
       <Inner>{children}</Inner>
