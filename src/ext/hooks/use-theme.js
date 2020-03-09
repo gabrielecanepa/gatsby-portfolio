@@ -1,12 +1,13 @@
 import createPersistedState from 'use-persisted-state'
 import themes, { baseTheme } from 'themes'
-import { getLocalStorageItem, isUserDarkMode } from 'utils'
+import useDarkMode from 'use-dark-mode'
+import { getLocalStorageItem, isDarkModeSupported } from 'utils'
 import { useCallback, useMemo } from 'react'
 
 const useThemeState = createPersistedState('theme')
 
 const useTheme = _theme => {
-  const availableThemes = useMemo(() => ['adaptive', ...Object.keys(themes)], [])
+  const availableThemes = useMemo(() => (isDarkModeSupported() ? ['adaptive', ...Object.keys(themes)] : Object.keys(themes)), [])
 
   const initialTheme = useMemo(() => {
     const localStorageTheme = getLocalStorageItem('theme')
@@ -15,14 +16,16 @@ const useTheme = _theme => {
 
   const [activeTheme, setActiveTheme] = useThemeState(initialTheme)
 
+  const isUserDarkMode = useDarkMode(false).value
+
   const theme = useMemo(() => {
-    const themeObject = activeTheme === 'adaptive' ? (isUserDarkMode() ? themes.dark : themes.light) : themes[activeTheme]
+    const themeObject = activeTheme === 'adaptive' ? (isUserDarkMode ? themes.dark : themes.light) : themes[activeTheme]
     return {
       ...themeObject,
       ...baseTheme,
       colors: { ...themeObject.colors, ...baseTheme.colors }, // merge colors
     }
-  }, [activeTheme])
+  }, [activeTheme, isUserDarkMode])
 
   const setTheme = useCallback(
     theme => {
