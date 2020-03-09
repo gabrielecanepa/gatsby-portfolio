@@ -1,42 +1,22 @@
+import createPersistedState from 'use-persisted-state'
 import themes, { baseTheme } from 'themes'
-import { StoreContext } from './store'
-import { getLocalStorageItem, isUserDarkMode, setLocalStorageItem } from 'utils'
-import { useCallback, useContext, useEffect, useMemo } from 'react'
+import { getLocalStorageItem, isUserDarkMode } from 'utils'
+import { useCallback, useMemo } from 'react'
 
-const useTheme = () => {
-  const { setStore, store } = useContext(StoreContext)
+const useThemeState = createPersistedState('theme')
 
+const useTheme = _theme => {
   const availableThemes = useMemo(() => ['adaptive', ...Object.keys(themes)], [])
 
-  const setStoreAndLocalStorageTheme = useCallback(
-    theme => {
-      setStore({ theme })
-      setLocalStorageItem('theme', theme)
-    },
-    [setStore]
-  )
-
-  useEffect(() => {
-    if (store.theme) return
-
+  const initialTheme = useMemo(() => {
     const localStorageTheme = getLocalStorageItem('theme')
+    return _theme || availableThemes.includes(localStorageTheme) ? localStorageTheme : availableThemes[0]
+  }, [_theme, availableThemes])
 
-    if (availableThemes.includes(localStorageTheme)) {
-      setStore({ theme: localStorageTheme })
-    } else {
-      setStoreAndLocalStorageTheme(availableThemes[0])
-    }
-  })
-
-  const activeTheme = useMemo(() => {
-    const localStorageTheme = getLocalStorageItem('theme')
-    return store.theme || availableThemes.includes(localStorageTheme) ? localStorageTheme : availableThemes[0]
-  }, [availableThemes, store.theme])
+  const [activeTheme, setActiveTheme] = useThemeState(initialTheme)
 
   const theme = useMemo(() => {
-    const themeObject =
-      activeTheme === 'adaptive' ? (isUserDarkMode() ? themes.dark : themes.light) : themes[activeTheme]
-
+    const themeObject = activeTheme === 'adaptive' ? (isUserDarkMode() ? themes.dark : themes.light) : themes[activeTheme]
     return {
       ...themeObject,
       ...baseTheme,
@@ -47,23 +27,23 @@ const useTheme = () => {
   const setTheme = useCallback(
     theme => {
       if (!availableThemes.includes(theme)) return
-      setStoreAndLocalStorageTheme(theme)
+      setActiveTheme(theme)
     },
-    [availableThemes, setStoreAndLocalStorageTheme]
+    [availableThemes, setActiveTheme]
   )
 
   const setRandomTheme = useCallback(() => {
     const randomTheme = availableThemes.filter(availableTheme => availableTheme !== activeTheme)[
       Math.floor(Math.random() * (availableThemes.length - 1))
     ]
-    setTheme(randomTheme)
-  }, [activeTheme, availableThemes, setTheme])
+    setActiveTheme(randomTheme)
+  }, [activeTheme, availableThemes, setActiveTheme])
 
   const switchTheme = useCallback(() => {
     const themeIndex = availableThemes.indexOf(activeTheme) + 1
     const nextTheme = availableThemes[themeIndex === availableThemes.length ? 0 : themeIndex]
-    setTheme(nextTheme)
-  }, [activeTheme, availableThemes, setTheme])
+    setActiveTheme(nextTheme)
+  }, [activeTheme, availableThemes, setActiveTheme])
 
   return { theme, setTheme, setRandomTheme, switchTheme }
 }
