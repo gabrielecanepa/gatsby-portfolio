@@ -3,6 +3,9 @@ export const getLocalStorageItem = name => (typeof window === 'undefined' ? null
 export const setLocalStorageItem = (name, value) =>
   typeof window === 'undefined' ? null : window.localStorage.setItem(name, value)
 
+export const isUserDarkMode = () =>
+  typeof window === 'undefined' ? null : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+
 export const shadeColor = (color, amount) =>
   `#${color
     .replace(/^#/, '')
