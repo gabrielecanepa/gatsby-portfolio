@@ -1,20 +1,6 @@
 import React from 'react'
 
 export default {
-  // backgrounds
-  wave: {
-    shape: (
-      <path>
-        <animate
-          attributeName="d"
-          dur="30s"
-          repeatCount="indefinite"
-          values="M 0 100 Q 250 50 400 200 Q 550 350 800 300 L 800 0 L 0 0 L 0 100 Z;M 0 100 Q 200 150 400 200 Q 600 250 800 300 L 800 0 L 0 0 L 0 100 Z;M 0 100 Q 150 350 400 200 Q 650 50 800 300 L 800 0 L 0 0 L 0 100 Z"
-        />
-      </path>
-    ),
-    viewBox: '0 0 800 338.05',
-  },
   // shapes
   arrowUp: {
     shape: (
@@ -75,6 +61,20 @@ export default {
       </>
     ),
     viewBox: '0 0 30 44.58',
+  },
+  // backgrounds
+  wave: {
+    shape: (
+      <path>
+        <animate
+          attributeName="d"
+          dur="30s"
+          repeatCount="indefinite"
+          values="M 0 100 Q 250 50 400 200 Q 550 350 800 300 L 800 0 L 0 0 L 0 100 Z;M 0 100 Q 200 150 400 200 Q 600 250 800 300 L 800 0 L 0 0 L 0 100 Z;M 0 100 Q 150 350 400 200 Q 650 50 800 300 L 800 0 L 0 0 L 0 100 Z"
+        />
+      </path>
+    ),
+    viewBox: '0 0 800 338.05',
   },
   // icons
   css: {

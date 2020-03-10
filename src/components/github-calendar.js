@@ -31,7 +31,7 @@ const GitHubCalendar = ({ username, text = '', responsive = true, showStats = fa
 
   return (
     <div ref={ref} style={enhancedStyle} {...rest}>
-      {isLoading && (<Loader /> || <p>{'Loading GitHub...'}</p>)}
+      {isLoading && (<Loader /> || <p>{'Loading GitHub calendar...'}</p>)}
     </div>
   )
 }

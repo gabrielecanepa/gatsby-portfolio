@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ParallaxLayer } from 'react-spring/renderprops-addons.cjs'
+import { ParallaxLayer } from 'react-spring/renderprops-addons'
 
 const DividerBase = styled(ParallaxLayer)`
-  position: absolute;
   width: 100%;
   height: 100%;
   ${({ bg }) => bg && `background: ${bg}`};

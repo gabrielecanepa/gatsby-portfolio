@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { icons } from 'images'
 
 const sizes = {
+  // in rem
   xs: 2,
   sm: 3,
   md: 4,

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Avatar } from 'images'
 import { Hero as Bg } from 'backgrounds'
 import { Typography } from 'components'
-import { useTheme } from 'ext/hooks'
 
 const FlexContainer = styled.div`
   display: flex;
@@ -29,27 +28,23 @@ const SocialLinksContainer = styled.div`
   align-items: center;
 `
 
-const Hero = ({ offset }) => {
-  const { switchTheme } = useTheme()
-
-  return (
-    <Bg offset={offset}>
-      <FlexContainer>
-        <StyledAvatar onClick={switchTheme} title="gabrielecanepa" />
-        <TitlesContainer>
-          <Typography variant="h1">
-            {"Hello, I'm "}
-            <UnderlinedText>{'Gabriele'}</UnderlinedText>
-          </Typography>
-          <Typography variant="subtitle">
-            {"I'm a developer and teacher from "}
-            <span title="Italy">{'🇮🇹'}</span>{' '}
-          </Typography>
-        </TitlesContainer>
-      </FlexContainer>
-      <SocialLinksContainer></SocialLinksContainer>
-    </Bg>
-  )
-}
+const Hero = ({ offset }) => (
+  <Bg offset={offset}>
+    <FlexContainer>
+      <StyledAvatar title="gabrielecanepa" />
+      <TitlesContainer>
+        <Typography variant="h1">
+          {"Hello, I'm "}
+          <UnderlinedText>{'Gabriele'}</UnderlinedText>
+        </Typography>
+        <Typography variant="subtitle">
+          {"I'm a developer and teacher from "}
+          <span title="Italy">{'🇮🇹'}</span>{' '}
+        </Typography>
+      </TitlesContainer>
+    </FlexContainer>
+    <SocialLinksContainer></SocialLinksContainer>
+  </Bg>
+)
 
 export default Hero

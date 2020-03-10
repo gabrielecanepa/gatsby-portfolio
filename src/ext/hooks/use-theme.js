@@ -7,7 +7,10 @@ import { useCallback, useMemo } from 'react'
 const useThemeState = createPersistedState('theme')
 
 const useTheme = _theme => {
-  const availableThemes = useMemo(() => (isDarkModeSupported() ? ['adaptive', ...Object.keys(themes)] : Object.keys(themes)), [])
+  const availableThemes = useMemo(
+    () => (isDarkModeSupported() ? ['adaptive', ...Object.keys(themes)] : Object.keys(themes)),
+    []
+  )
 
   const initialTheme = useMemo(() => {
     const localStorageTheme = getLocalStorageItem('theme')
@@ -15,7 +18,6 @@ const useTheme = _theme => {
   }, [_theme, availableThemes])
 
   const [activeTheme, setActiveTheme] = useThemeState(initialTheme)
-
   const isUserDarkMode = useDarkMode(false).value
 
   const theme = useMemo(() => {
@@ -35,6 +37,12 @@ const useTheme = _theme => {
     [availableThemes, setActiveTheme]
   )
 
+  const setNextTheme = useCallback(() => {
+    const themeIndex = availableThemes.indexOf(activeTheme)
+    const nextTheme = availableThemes[themeIndex === availableThemes.length - 1 ? 0 : themeIndex + 1]
+    setActiveTheme(nextTheme)
+  }, [activeTheme, availableThemes, setActiveTheme])
+
   const setRandomTheme = useCallback(() => {
     const randomTheme = availableThemes.filter(availableTheme => availableTheme !== activeTheme)[
       Math.floor(Math.random() * (availableThemes.length - 1))
@@ -42,13 +50,12 @@ const useTheme = _theme => {
     setActiveTheme(randomTheme)
   }, [activeTheme, availableThemes, setActiveTheme])
 
-  const switchTheme = useCallback(() => {
-    const themeIndex = availableThemes.indexOf(activeTheme) + 1
-    const nextTheme = availableThemes[themeIndex === availableThemes.length ? 0 : themeIndex]
-    setActiveTheme(nextTheme)
-  }, [activeTheme, availableThemes, setActiveTheme])
-
-  return { theme, setTheme, setRandomTheme, switchTheme }
+  return {
+    theme,
+    setTheme,
+    setNextTheme,
+    setRandomTheme,
+  }
 }
 
 export default useTheme

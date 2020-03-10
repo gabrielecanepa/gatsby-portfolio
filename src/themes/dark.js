@@ -8,7 +8,7 @@ export default {
     title: fonts.mono,
   },
   colors: {
-    accent: colors.blue,
+    accent: colors.orange,
     backgrounds: [colors.blueBlack, colors.blueGray],
     shapes: [colors.grayDarkest, colors.grayDarker, colors.grayDark],
     texts: [colors.white, colors.grayLighter, colors.grayLight],
